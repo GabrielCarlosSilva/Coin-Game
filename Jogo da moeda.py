@@ -3,11 +3,13 @@ import os
 
 turns=0
 maxTurns=5
-play=1
 player_play=" "
 cpu_play=" "
-cpu_points=0.0
-player_points=0.0
+cpu_points=0
+player_points=0
+strategy=0
+profile=" "
+cpu_decision="___"
 
 board=["___","___"]
 
@@ -23,28 +25,12 @@ def pTurn():
     if turns<maxTurns:
         try:
             player_play=(input("Insert coin?: [y,n]  "))
-            os.system('cls')
             if player_play=="y":
                 board[0]="_O_"
             if player_play=="n":
                 board[0]="_X_"
         except:
             print("Try again")
-
-def cTurn():
-    global turns
-    global maxTurns
-    global cpu_play
-    if turns<maxTurns:
-        cpu_play=random.randrange(1,3)
-        if cpu_play==1:
-            board[1]="_X_"
-            turns+=1
-        if cpu_play==2:
-            board[1]="_O_"
-            turns+=1
-    else:
-        turns+=1
 
 def result():
     global turns
@@ -67,6 +53,7 @@ def result():
         player_points-=1
 
 def score():
+    global profile
     global turns
     global cpu_points
     global player_points
@@ -83,9 +70,73 @@ def score():
         elif player_points<cpu_points:
             print("You lose")
 
+        print("You was playing against the " + profile)
+
+def chooser():
+    global turns
+    global strategy
+
+    if turns==0:
+        strategy=random.randrange(1,4)
+
+def thief():
+    global turns
+    global maxTurns
+    global cpu_decision
+    if turns<maxTurns:
+        cpu_decision="_X_"
+        turns+=1
+    else:
+        turns+=1
+
+def cooperator():
+    global turns
+    global maxTurns
+    global cpu_decision
+    if turns<maxTurns:
+        cpu_decision="_O_"
+        turns+=1
+    else:
+        turns+=1  
+
+def chaotic():
+    global turns
+    global maxTurns
+    global cpu_play
+    global cpu_decision
+    if turns<maxTurns:
+        cpu_play=random.randrange(1,5)
+        if cpu_play==1:
+            cpu_decision="_X_"
+            turns+=1
+        if cpu_play==2:
+            cpu_decision="_O_"
+            turns+=1
+    else:
+        turns+=1
+
+def intermediary():
+    global strategy
+    global profile
+    if strategy==1:
+        chaotic()
+        profile="Chaotic"
+    elif strategy==2:
+        thief()
+        profile="Thief"
+    elif strategy==3 or strategy==4:
+        cooperator()
+        profile="Cooperator"
+
+def writer():
+    global cpu_decision
+    board[1]=cpu_decision
+
 while turns<maxTurns:
+    chooser()
+    intermediary()
     pTurn()
-    cTurn()
+    writer()
     screen()
     result()
     score()
