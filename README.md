@@ -15,7 +15,7 @@ Update 0.5 - A minor update:
   -Sometimes the oponent didn't choose anything, and nothing appeared on the screen, that happened due to a minor mistake on line 83.
   -Randomly the game neven ended due to a logical mistake when I write the turn system.
   
- #Oponents:
+#Oponents:
   -Now the game randomly chooses an "oponent" to play against you:
     .The Cooperative: who always inserts the coin;
     .The Thief: who never inserts the coin;
