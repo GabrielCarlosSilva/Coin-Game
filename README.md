@@ -10,20 +10,20 @@ Here are the rules:
 The main question is how much each player trusts the other to make the best decision for both.
 
 ============================ 
-Update 0.5 - A minor update
+Update 0.5 - A minor update:
 #Bug Fixes:
   -Sometimes the oponent didn't choose anything, and nothing appeared on the screen, that happened due to a minor mistake on line 83.
   -Randomly the game neven ended due to a logical mistake when I write the turn system.
   
- #Oponents
+ #Oponents:
   -Now the game randomly chooses an "oponent" to play against you:
     .The Cooperative: who always inserts the coin;
     .The Thief: who never inserts the coin;
     .The Chaotic: who plays randomly.
  
 ============================ 
-Update 1.0 - New oponents
-  -Now we have three new oponents:
-    .The Copycat: who copies your last decision;
-    .The Rancorous: who starts out cooperative but becomes a thief if you don't insert the coin once;
-    .The Detective: who follows a specific pattern of insert/not insert decisions in the first four turns, then acts like a thief or copycat depending on your behavior.
+Update 1.0 - New oponents:
+#Now we have three new oponents:
+  -The Copycat: who copies your last decision;
+  -The Rancorous: who starts out cooperative but becomes a thief if you don't insert the coin once;
+  -The Detective: who follows a specific pattern of insert/not insert decisions in the first four turns, then acts like a thief or copycat depending on your behavior.
