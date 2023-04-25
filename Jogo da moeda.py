@@ -1,7 +1,7 @@
 import random
 import os
 
-turns=0
+playagain="y"
 maxTurns=10
 player_play=" "
 cpu_play=" "
@@ -180,12 +180,18 @@ def writer():
     global board
     board[1]=cpu_decision
 
-while turns<maxTurns+1:
-    chooser()
-    intermediary()
-    pTurn()
-    writer()
-    screen()
-    result()
-    score()
-    turns+=1
+
+while playagain=="y" or playagain=="Y":
+    turns=0
+    while turns<maxTurns+1:
+        chooser()
+        intermediary()
+        pTurn()
+        writer()
+        screen()
+        result()
+        score()
+        turns+=1
+    
+    playagain=(input("Play Again? [y,n]  "))
+    os.system('cls')
