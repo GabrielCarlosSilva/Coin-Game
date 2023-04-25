@@ -40,3 +40,10 @@ Update 1.0 - New oponents:
   -The Rancorous: who starts out cooperative but becomes a thief if you don't insert the coin once;
   
   -The Detective: who follows a specific pattern of insert/not insert decisions in the first four turns, then acts like a thief or copycat depending on your behavior.
+
+============================
+
+Update 1.0.1 - Minor update
+
+#The "Play again" option was added;
+#Bug fixes
