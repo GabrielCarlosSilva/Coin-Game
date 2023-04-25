@@ -46,4 +46,5 @@ Update 1.0 - New oponents:
 Update 1.0.1 - Minor update
 
 #The "Play again" option was added;
+
 #Bug fixes
